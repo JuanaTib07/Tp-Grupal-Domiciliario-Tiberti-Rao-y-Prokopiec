@@ -53,9 +53,7 @@ public class PrecioComida : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //random.SetRandomPosition();
-        //GameObject prefab = comida[Random.Range(0, comida.Length)];
-        //Instantiate(prefab, clonePoint.position, clonePoint.rotation);
+       
     }
 
 }
