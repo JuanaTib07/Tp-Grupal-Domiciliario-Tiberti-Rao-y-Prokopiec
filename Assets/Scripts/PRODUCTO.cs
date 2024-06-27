@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class PRODUCTO : MonoBehaviour
 {
-    public float precio;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int precio;
+    
 }
