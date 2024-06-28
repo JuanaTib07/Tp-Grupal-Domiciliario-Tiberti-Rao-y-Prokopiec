@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6049603968477683451}
   - component: {fileID: 6049603968476356315}
   - component: {fileID: 6049603968475257883}
+  - component: {fileID: 3830864485504505482}
   - component: {fileID: 9088421240497035061}
   m_Layer: 0
   m_Name: Donato Sesma_Santino Vicente_48111594
@@ -78,6 +79,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3830864485504505482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6049603968477184731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3055bfc94cf6e7b46bf1798cc8a4988a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 2
+  amplitude: 10
+  rotation_speed: 3
 --- !u!114 &9088421240497035061
 MonoBehaviour:
   m_ObjectHideFlags: 0

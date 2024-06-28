@@ -19,6 +19,10 @@ public class manager : MonoBehaviour
 
     public Text resultado;
 
+    public Toggle toggle1;
+    public Toggle toggle2;
+    public Toggle toggle3;
+
     public GameObject[] objetos;
 
     int resul;
@@ -27,16 +31,12 @@ public class manager : MonoBehaviour
     void Start()
     {
         valor1=Instantiate(objetos[Random.Range(0, objetos.Length)], spawnpoint.position, Quaternion.identity).GetComponent<PRODUCTO>().precio;
-        
+        textoprecio.text = valor1.ToString() + "$";
+
         int indexobj = Random.Range(0, objetos.Length);
         valor2 = objetos[indexobj].GetComponent<PRODUCTO>().precio;
         Instantiate(objetos[indexobj], spawnpoint1.position, Quaternion.identity);
         textoproducto1.text = valor2.ToString() + "$";
-
-        resul = valor2 + valor1;
-
-
-        textoprecio.text = resul.ToString();
         
         int a = Random.Range(0, objetos.Length);
         int valora= objetos[a].GetComponent<PRODUCTO>().precio;
@@ -46,9 +46,15 @@ public class manager : MonoBehaviour
         int b = Random.Range(0, objetos.Length);
         int valorb = objetos[b].GetComponent<PRODUCTO>().precio;
         Instantiate(objetos[b], spawnpoint3.position, Quaternion.identity);
-        textoproducto2.text = b.ToString() + "$";
+        textoproducto3.text = valorb.ToString() + "$";
 
+        resul = valor1 + (Random.Range(0.0f, 1.0f) < 0.5f ? valora : valorb);
+        resultado.text = resul.ToString()+"$";
 
+    }
 
+    void Resultado()
+    {
+        
     }
 }
