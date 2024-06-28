@@ -24,6 +24,10 @@ public class manager : MonoBehaviour
     public Toggle toggle3;
 
     public GameObject[] objetos;
+    public GameObject canvas;
+    public Text noti_text;
+
+    public GameObject Cosas;
 
     int resul;
     int valor1;
@@ -32,6 +36,8 @@ public class manager : MonoBehaviour
 
     public bool ganar = false;
 
+    int valora;
+    int valorb;
     void Start()
     {
         valor1=Instantiate(objetos[Random.Range(0, objetos.Length)], spawnpoint.position, Quaternion.identity).GetComponent<PRODUCTO>().precio;
@@ -43,12 +49,12 @@ public class manager : MonoBehaviour
         textoproducto1.text = valor2.ToString() + "$";
         
         int a = Random.Range(0, objetos.Length);
-        int valora= objetos[a].GetComponent<PRODUCTO>().precio;
+        valora= objetos[a].GetComponent<PRODUCTO>().precio;
         Instantiate(objetos[a], spawnpoint2.position, Quaternion.identity);
         textoproducto2.text = valora.ToString() + "$";
 
         int b = Random.Range(0, objetos.Length);
-        int valorb = objetos[b].GetComponent<PRODUCTO>().precio;
+        valorb = objetos[b].GetComponent<PRODUCTO>().precio;
         Instantiate(objetos[b], spawnpoint3.position, Quaternion.identity);
         textoproducto3.text = valorb.ToString() + "$";
 
@@ -60,15 +66,12 @@ public class manager : MonoBehaviour
 
     public void Resultado()
     {
+        canvas.SetActive(true);
         if(correct < 0.5f)
         {
             if (toggle2.isOn && !toggle1.isOn && !toggle3.isOn)
             {
                 ganar = true;
-            }
-            else
-            {
-                SceneManager.LoadScene("sampleScene");
             }
         }
         else
@@ -77,10 +80,18 @@ public class manager : MonoBehaviour
             {
                 ganar = true;
             }
-            else
-            {
-                SceneManager.LoadScene("sampleScene");
-            }
         }
+        if(valora == valorb && !toggle1.isOn)
+        {
+            ganar = true;
+        }
+
+        noti_text.text = (ganar ? "ganaste!" : "perdiste!");
+        Cosas.SetActive(false);
+    }
+
+    public void reset()
+    {
+        SceneManager.LoadScene("sampleScene");
     }
 }
