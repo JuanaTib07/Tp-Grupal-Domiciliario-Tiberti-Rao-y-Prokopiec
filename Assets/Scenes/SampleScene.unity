@@ -661,7 +661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226962953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 345, y: 120, z: -4.9571147}
+  m_LocalPosition: {x: 345, y: 120, z: -23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -888,7 +888,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463542277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 179, y: 183, z: -4.9571147}
+  m_LocalPosition: {x: 179, y: 183, z: -23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2279,7 +2279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310529339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65, y: 120, z: -4.9571147}
+  m_LocalPosition: {x: 65, y: 120, z: -23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2705,7 +2705,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1440247199}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1902382502}
+        m_MethodName: Resultado
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1440247199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2786,7 +2797,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592630361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 218, y: 120, z: -4.9571147}
+  m_LocalPosition: {x: 218, y: 120, z: -23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3162,9 +3173,9 @@ MonoBehaviour:
   textoproducto2: {fileID: 1625621047}
   textoproducto3: {fileID: 478408185}
   resultado: {fileID: 1885789823}
-  toggle1: {fileID: 0}
-  toggle2: {fileID: 0}
-  toggle3: {fileID: 0}
+  toggle1: {fileID: 190077335}
+  toggle2: {fileID: 995560972}
+  toggle3: {fileID: 1919806769}
   objetos:
   - {fileID: 1524563309}
   - {fileID: 1296987661}
@@ -3178,6 +3189,7 @@ MonoBehaviour:
   - {fileID: 196082482}
   - {fileID: 400222665}
   - {fileID: 1398047112}
+  ganar: 0
 --- !u!4 &1902382503
 Transform:
   m_ObjectHideFlags: 0

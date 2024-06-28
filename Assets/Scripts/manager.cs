@@ -28,6 +28,10 @@ public class manager : MonoBehaviour
     int resul;
     int valor1;
     int valor2;
+    float correct;
+
+    public bool ganar = false;
+
     void Start()
     {
         valor1=Instantiate(objetos[Random.Range(0, objetos.Length)], spawnpoint.position, Quaternion.identity).GetComponent<PRODUCTO>().precio;
@@ -48,13 +52,35 @@ public class manager : MonoBehaviour
         Instantiate(objetos[b], spawnpoint3.position, Quaternion.identity);
         textoproducto3.text = valorb.ToString() + "$";
 
-        resul = valor1 + (Random.Range(0.0f, 1.0f) < 0.5f ? valora : valorb);
+        correct = Random.Range(0.0f, 1.0f);
+        resul = valor1 + (correct < 0.5f ? valora : valorb);
         resultado.text = resul.ToString()+"$";
 
     }
 
-    void Resultado()
+    public void Resultado()
     {
-        
+        if(correct < 0.5f)
+        {
+            if (toggle2.isOn && !toggle1.isOn && !toggle3.isOn)
+            {
+                ganar = true;
+            }
+            else
+            {
+                SceneManager.LoadScene("sampleScene");
+            }
+        }
+        else
+        {
+            if (!toggle2.isOn && !toggle1.isOn && toggle3.isOn)
+            {
+                ganar = true;
+            }
+            else
+            {
+                SceneManager.LoadScene("sampleScene");
+            }
+        }
     }
 }
