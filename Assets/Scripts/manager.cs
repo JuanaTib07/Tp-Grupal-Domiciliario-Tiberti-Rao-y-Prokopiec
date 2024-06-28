@@ -26,6 +26,7 @@ public class manager : MonoBehaviour
     public GameObject[] objetos;
     public GameObject canvas;
     public Text noti_text;
+    public Text restart_button;
 
     public GameObject Cosas;
 
@@ -86,12 +87,31 @@ public class manager : MonoBehaviour
             ganar = true;
         }
 
+        restart_button.text = (ganar ? "reiniciar" : "volve a intentar");
         noti_text.text = (ganar ? "ganaste!" : "perdiste!");
+        if(!toggle2.isOn && !toggle1.isOn && !toggle3.isOn)
+        {
+            restart_button.text = "volver a intentar";
+            noti_text.text = "seleccione una opcion";
+        }
         Cosas.SetActive(false);
     }
 
     public void reset()
     {
-        SceneManager.LoadScene("sampleScene");
+        if(ganar && !(!toggle2.isOn && !toggle1.isOn && !toggle3.isOn))
+        {
+            SceneManager.LoadScene("sampleScene");
+            ganar = false;
+        }
+        else
+        {
+            canvas.SetActive(false);
+            Cosas.SetActive(true);
+            ganar = false;
+            toggle1.isOn = false;
+            toggle2.isOn = false;
+            toggle3.isOn = false;
+        }
     }
 }
